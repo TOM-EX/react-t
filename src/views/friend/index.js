@@ -1,9 +1,10 @@
 import React,{ memo } from 'react'
-
-export default memo( function Friend(){
+import { renderRoutes } from 'react-router-config'
+export default memo( function Friend(props){
+  const { route } = props
   return (
     <div>
-    <h2> friend</h2>
+    { renderRoutes(route.routes) }
     </div>
   )
 })
