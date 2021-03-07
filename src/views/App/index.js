@@ -1,6 +1,8 @@
 
 // import './index.css';
 import React from 'react'
+import { Provider } from 'react-redux'
+import store from '@/store'
 import Footer from '@/components/footer';
 import Yheader from '@/components/header';
 import routes from '@/routers/index.js';
@@ -9,13 +11,13 @@ import { HashRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <HashRouter>
         <Yheader />
         {renderRoutes(routes)}
         <Footer />
       </HashRouter>
-    </div>
+    </Provider>
   );
 }
 
